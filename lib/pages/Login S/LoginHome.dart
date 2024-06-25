@@ -1,6 +1,5 @@
 
-import 'package:appointmentms/widgets/AfterLoginAppBar.dart';
-import 'package:appointmentms/widgets/AfterSignUpBottpm.dart';
+
 import 'package:flutter/material.dart';
 import 'package:appointmentms/widgets/app_largetext.dart';
 
@@ -17,7 +16,7 @@ class _LoginHomeState extends State<LoginHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AfterLoginAppBar(),
+      //appBar:  AfterLoginAppBar(),
       body: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.only(top: 35),
@@ -31,7 +30,7 @@ class _LoginHomeState extends State<LoginHome> {
           ],
         ),
       ),
-      bottomNavigationBar:  AfterLoginBottomNavigation(),
+      //bottomNavigationBar:  AfterLoginBottomNavigation(),
     );
   }  
 }

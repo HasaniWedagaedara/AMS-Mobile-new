@@ -1,12 +1,8 @@
 import 'package:appointmentms/pages/Login%20S/LoginHome.dart';
-import 'package:appointmentms/pages/SignUp%20S/StudentSignUp1.dart';
-import 'package:appointmentms/pages/SignUp%20S/StudentpasswordReset1.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
+import 'package:appointmentms/widgets/Topwavewithoutmenu.dart';
 import 'package:appointmentms/widgets/apptext2.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:appointmentms/widgets/buttons.dart';
-import 'package:appointmentms/widgets/miniText.dart';
-import 'package:appointmentms/widgets/texboxLec.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -165,95 +161,115 @@ class _StudentLoginState extends State<StudentLogin> {
       print("handelsubmit ");
       getRegNumber(email);
       saveRegNumber(email);
-      printStoredRegNumber(); // Pass context to handleLogin function
+      printStoredRegNumber(); 
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarcommon(),
+      appBar: TopWaveWithoutMenuIcon(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 25.0),
-            Center(child: AppLargeText2(text: "LOGIN")),
-            SizedBox(height: 35.0),
-            TextField(
-              controller: FacultyEmailController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Email',
-              ),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            padding:
+                EdgeInsets.all(16.0), 
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey), // Border color and width
+              borderRadius:
+                  BorderRadius.circular(8.0), // Optional rounded corners
             ),
-            SizedBox(height: 25.0),
-            TextField(
-              controller: PasswordController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Password',
-              ),
+            child: Column(
+              children: [
+                SizedBox(height: 5.0),
+                Center(child: AppLargeText2(text: "LOGIN")),
+                SizedBox(height: 35.0),
+                Container(
+                   width: 380,
+                  height: 45,
+                  child: TextField(
+                    controller: FacultyEmailController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 25.0),
+                Container(
+                   width: 380,
+                  height: 45,
+                  child: TextField(
+                    controller: PasswordController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 50.0),
+                Buttons(
+                  text: "Login",
+                  onPressed: () {
+                    ;
+                    print(" press login");
+                    handleSubmit();
+                  },
+                ),
+                // Row(
+                //   children: [
+                //     SizedBox(width: 90.0),
+                //     BottomText2(text: "Forgot password ?"),
+                //     TextButton(
+                //       onPressed: () => Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //           builder: (context) => StudentpasswordReset1(),
+                //         ),
+                //       ),
+                //       child: const Text(
+                //         'RESET',
+                //         style: TextStyle(
+                //           color: Color(0xFF500512),
+                //           decoration: TextDecoration.underline,
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                // SizedBox(height: 70.0),
+                // Row(
+                //   children: [
+                //     SizedBox(width: 67.0),
+                //     BottomText2(text: "Don't have an account?"),
+                //     TextButton(
+                //       onPressed: () => Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //           builder: (context) => StudentSignup1(),
+                //         ),
+                //       ),
+                //       child: const Text(
+                //         'SIGN UP',
+                //         style: TextStyle(
+                //           color: Color(0xFF500512),
+                //           decoration: TextDecoration.underline,
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+              ],
             ),
-            SizedBox(height: 50.0),
-            Buttons(
-              text: "Login",
-              onPressed: () {
-                ;
-                print(" press login");
-                handleSubmit();
-              },
-            ),
-            // Row(
-            //   children: [
-            //     SizedBox(width: 90.0),
-            //     BottomText2(text: "Forgot password ?"),
-            //     TextButton(
-            //       onPressed: () => Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //           builder: (context) => StudentpasswordReset1(),
-            //         ),
-            //       ),
-            //       child: const Text(
-            //         'RESET',
-            //         style: TextStyle(
-            //           color: Color(0xFF500512),
-            //           decoration: TextDecoration.underline,
-            //           fontSize: 18,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // SizedBox(height: 70.0),
-            // Row(
-            //   children: [
-            //     SizedBox(width: 67.0),
-            //     BottomText2(text: "Don't have an account?"),
-            //     TextButton(
-            //       onPressed: () => Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //           builder: (context) => StudentSignup1(),
-            //         ),
-            //       ),
-            //       child: const Text(
-            //         'SIGN UP',
-            //         style: TextStyle(
-            //           color: Color(0xFF500512),
-            //           decoration: TextDecoration.underline,
-            //           fontSize: 18,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-          ],
+          ),
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }

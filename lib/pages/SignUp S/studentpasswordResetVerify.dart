@@ -1,8 +1,7 @@
 
 import 'package:appointmentms/pages/SignUp%20S/StudentResetPassword.dart';
 import 'package:appointmentms/widgets/app_largetext.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:appointmentms/widgets/buttons.dart';
 import 'package:appointmentms/widgets/texboxLec.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class _StudentSignUpState3 extends State<StudentpasswordResetVerify> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar:  AppBarcommon(),
+      //appBar:  AppBarcommon(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -71,7 +70,7 @@ class _StudentSignUpState3 extends State<StudentpasswordResetVerify> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }

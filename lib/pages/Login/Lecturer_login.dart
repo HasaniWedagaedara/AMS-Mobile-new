@@ -1,12 +1,8 @@
-import 'package:appointmentms/pages/SignUp%20L/lectureSignUp.dart';
-import 'package:appointmentms/pages/SignUp%20L/lesturepasswordreset1.dart';
 import 'package:appointmentms/pages/Login/StaffLoginHome.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
+import 'package:appointmentms/widgets/Topwavewithoutmenu.dart';
 import 'package:appointmentms/widgets/apptext2.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:appointmentms/widgets/buttons.dart';
-import 'package:appointmentms/widgets/googleButton.dart';
-import 'package:appointmentms/widgets/miniText.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -116,94 +112,115 @@ class _LectureLoginState extends State<LectureLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarcommon(),
+      appBar: TopWaveWithoutMenuIcon(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 10.0),
-            Center(child: AppLargeText2(text: "LOGIN")),
-            SizedBox(height: 20.0),
-            TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                labelText: "Email",
-                border: OutlineInputBorder(),
-              ),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            padding:
+                EdgeInsets.all(16.0), // Optional padding inside the container
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey), // Border color and width
+              borderRadius:
+                  BorderRadius.circular(8.0), // Optional rounded corners
             ),
-            SizedBox(height: 20.0),
-            TextField(
-              controller: passwordController,
-              decoration: InputDecoration(
-                labelText: "Password",
-                border: OutlineInputBorder(),
-              ),
+            child: Column(
+              children: [
+                SizedBox(height: 10.0),
+                Center(child: AppLargeText2(text: "LOGIN")),
+                SizedBox(height: 20.0),
+                Container(
+                  width: 380,
+                  height: 45,
+                  child: TextField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      labelText: "Email",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Container(
+                  width: 380,
+                  height: 45,
+                  child: TextField(
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40.0),
+                Buttons(
+                  text: "LOGIN",
+                  onPressed: () {
+                    print("Button clicked");
+                    _handleLogin();
+                  },
+                ),
+                SizedBox(height: 20.0),
+                // Row(
+                //   children: [
+                //     SizedBox(width: 95.0),
+                //     BottomText2(text: "Forgot Password ?"),
+                //     TextButton(
+                //       onPressed: () => Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //           builder: (context) => LecturepasswordReset1(),
+                //         ),
+                //       ),
+                //       child: const Text(
+                //         'RESET',
+                //         style: TextStyle(
+                //           color: Color(0xFF500512),
+                //           decoration: TextDecoration.underline,
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                //SizedBox(height: 20.0),
+                // GButton(
+                //   onPressed: () {
+                //     print("Google button clicked");
+                //     _handleGoogleAuth();
+                //   },
+                // ),
+                //SizedBox(height: 70.0),
+                // Row(
+                //   children: [
+                //     SizedBox(width: 67.0),
+                //     BottomText2(text: "Don't have an account?"),
+                //     TextButton(
+                //       onPressed: () => Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //           builder: (context) => LecturerSignUp(),
+                //         ),
+                //       ),
+                //       child: const Text(
+                //         'SIGN UP',
+                //         style: TextStyle(
+                //           color: Color(0xFF500512),
+                //           decoration: TextDecoration.underline,
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+              ],
             ),
-            SizedBox(height: 20.0),
-            Buttons(
-              text: "LOGIN",
-              onPressed: () {
-                print("Button clicked");
-                _handleLogin();
-              },
-            ),
-            // Row(
-            //   children: [
-            //     SizedBox(width: 95.0),
-            //     BottomText2(text: "Forgot Password ?"),
-            //     TextButton(
-            //       onPressed: () => Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //           builder: (context) => LecturepasswordReset1(),
-            //         ),
-            //       ),
-            //       child: const Text(
-            //         'RESET',
-            //         style: TextStyle(
-            //           color: Color(0xFF500512),
-            //           decoration: TextDecoration.underline,
-            //           fontSize: 18,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            //SizedBox(height: 20.0),
-            // GButton(
-            //   onPressed: () {
-            //     print("Google button clicked");
-            //     _handleGoogleAuth();
-            //   },
-            // ),
-            //SizedBox(height: 70.0),
-            // Row(
-            //   children: [
-            //     SizedBox(width: 67.0),
-            //     BottomText2(text: "Don't have an account?"),
-            //     TextButton(
-            //       onPressed: () => Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //           builder: (context) => LecturerSignUp(),
-            //         ),
-            //       ),
-            //       child: const Text(
-            //         'SIGN UP',
-            //         style: TextStyle(
-            //           color: Color(0xFF500512),
-            //           decoration: TextDecoration.underline,
-            //           fontSize: 18,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-          ],
+          ),
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }

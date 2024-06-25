@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:appointmentms/pages/CalenderViews/calenderpage.dart';
-import 'package:appointmentms/pages/contactpage.dart';
 import 'package:appointmentms/pages/homepage.dart';
 
 class Iconbuttons extends StatefulWidget {
@@ -16,7 +14,6 @@ class _IconbuttonsState extends State<Iconbuttons> {
   final List<Widget> _pages = [
     HomePage(),
    
-    ContactUs(),
   ];
 
   @override

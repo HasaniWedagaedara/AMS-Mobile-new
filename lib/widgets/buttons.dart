@@ -21,10 +21,10 @@ class Buttons extends StatelessWidget {
       onPressed: onPressed, // Use the provided callback
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.zero,
-        minimumSize: Size(width ?? 115.0, 50.0),
-        backgroundColor: const Color(0xFF500512),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.zero,
+        minimumSize: Size(width ?? 350.0, 50.0),
+        backgroundColor: Color.fromARGB(255, 141, 44, 220),
+        shape:  RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(35),
         ),
       ),
       child: Text(

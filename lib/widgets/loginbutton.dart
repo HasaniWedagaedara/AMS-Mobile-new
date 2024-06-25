@@ -18,7 +18,7 @@ class _LoginButtonState extends State<LoginButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 22),
+      padding: const EdgeInsets.only(top: 12),
       child: Column(
         children: [
           TextButton(
@@ -26,7 +26,7 @@ class _LoginButtonState extends State<LoginButton> {
             child: const Text(
               'LOGIN',
               style: TextStyle(
-                  color: Color(0xFF500512),
+                  color: Color.fromARGB(255, 11, 0, 2),
                   decoration: TextDecoration.underline,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
@@ -45,11 +45,11 @@ class _LoginButtonState extends State<LoginButton> {
       items: [
         PopupMenuItem(
           value: 'Lecturer',
-          child:  AppLargeText3(text: "STAFF"), // You can customize the appearance here
+          child:  ButtonText(text: "STAFF"), // You can customize the appearance here
         ),
         PopupMenuItem(
           value: 'Student',
-          child: AppLargeText3(text: "STUDENT"), // You can customize the appearance here
+          child: ButtonText(text: "STUDENT"), // You can customize the appearance here
         ),
       ],
     );

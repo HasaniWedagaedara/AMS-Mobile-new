@@ -1,8 +1,8 @@
+import 'package:appointmentms/pages/CalenderViews/TopCalenderWave.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:appointmentms/widgets/SideBar.dart';
-import 'package:appointmentms/widgets/appBar.dart';
-import 'package:appointmentms/widgets/bottomnavigation.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -229,7 +229,7 @@ Future<void> addAppointmentBackend(
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: ToppCalenderWave(),
       drawer: SideBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -441,7 +441,7 @@ Future<void> addAppointmentBackend(
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: BottomWaveBar(),
     );
   }
 }

@@ -17,7 +17,7 @@ class AppLargeText2 extends StatelessWidget {
         text,
         style: TextStyle(
           
-          color: Color(0xFF500512),
+          color: Color.fromARGB(255, 133, 12, 233),
           fontSize: 35,
           fontWeight: FontWeight.bold,
           

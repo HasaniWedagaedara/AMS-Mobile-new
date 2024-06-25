@@ -1,10 +1,10 @@
+import 'package:appointmentms/pages/Departments/SideBarMain.dart';
+import 'package:appointmentms/pages/Departments/TopMena.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart'; 
-import 'package:appointmentms/widgets/ButtonText.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
-import 'package:appointmentms/widgets/AfterSignUpBottpm.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appointmentms/pages/CalenderViews/DailyView.dart';
 
 class Marine extends StatefulWidget {
@@ -15,7 +15,7 @@ class Marine extends StatefulWidget {
 }
 
 class _MarineState extends State<Marine> {
-  String dropdownValue = 'Choose Role'; // Default value for the dropdown
+  String dropdownValue = 'Choose Role'; 
   List<dynamic> allStaff = [];
 
   @override
@@ -62,17 +62,8 @@ class _MarineState extends State<Marine> {
     List<dynamic> filteredStaff = allStaff.where((staff) => staff['Department'] == 'MENA').toList();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Department of"),
-            Text("Marine Engineering and Naval Architecture"),
-          ],
-        ),
-        backgroundColor: const Color(0xFFA1CCEB),
-        centerTitle: true,
-      ),
+      appBar: TopMena(),
+      drawer: SideBarMain(),
       body: filteredStaff.isNotEmpty
           ? ListView.builder(
               itemCount: filteredStaff.length,
@@ -98,7 +89,7 @@ class _MarineState extends State<Marine> {
               },
             )
           : Center(child: CircularProgressIndicator()),
-      bottomNavigationBar: AfterLoginBottomNavigation(),
+      bottomNavigationBar: BottomWaveBar(),
     );
   }
 }

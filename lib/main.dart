@@ -1,11 +1,4 @@
-
-
-import 'package:appointmentms/pages/CalenderViews/DailyView.dart';
-import 'package:appointmentms/pages/CalenderViews/MonthlyView.dart';
 import 'package:appointmentms/pages/Departments/DepartmentView.dart';
-import 'package:appointmentms/pages/Login%20S/studentLogin.dart';
-import 'package:appointmentms/pages/homepage.dart';
-import 'package:appointmentms/pages/test.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +19,8 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home:  HomePage(),
+      home:  DepartmentView(),
+
          );
   }
 }

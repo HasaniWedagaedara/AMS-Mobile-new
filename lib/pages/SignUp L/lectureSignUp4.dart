@@ -1,7 +1,6 @@
 import 'package:appointmentms/pages/Login/Lecturer_login.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
 import 'package:appointmentms/widgets/apptext2.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:appointmentms/widgets/buttons.dart';
 import 'package:appointmentms/widgets/icondropdown.dart';
 import 'package:appointmentms/widgets/texboxLec.dart';
@@ -21,7 +20,7 @@ class _LecturerSignUpState4 extends State<LecturerSignUp4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarcommon(),
+      //appBar: AppBarcommon(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -59,7 +58,7 @@ class _LecturerSignUpState4 extends State<LecturerSignUp4> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }

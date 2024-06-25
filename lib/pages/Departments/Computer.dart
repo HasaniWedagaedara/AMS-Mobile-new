@@ -1,10 +1,10 @@
+import 'package:appointmentms/pages/Departments/SideBarMain.dart';
+import 'package:appointmentms/pages/Departments/TopCom.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart'; 
-import 'package:appointmentms/widgets/ButtonText.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
-import 'package:appointmentms/widgets/AfterSignUpBottpm.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:appointmentms/pages/CalenderViews/DailyView.dart';
 
 class COM extends StatefulWidget {
@@ -62,17 +62,8 @@ class _COMState extends State<COM> {
     List<dynamic> filteredStaff = allStaff.where((staff) => staff['Department'] == 'COM').toList();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Department of"),
-            Text("Computer Engineering"),
-          ],
-        ),
-        backgroundColor: const Color(0xFFA1CCEB),
-        centerTitle: true,
-      ),
+      appBar: TopCom(),
+      drawer: SideBarMain(),
       body: filteredStaff.isNotEmpty
           ? ListView.builder(
               itemCount: filteredStaff.length,
@@ -98,7 +89,7 @@ class _COMState extends State<COM> {
               },
             )
           : Center(child: CircularProgressIndicator()),
-      bottomNavigationBar: AfterLoginBottomNavigation(),
+      bottomNavigationBar: BottomWaveBar(),
     );
   }
 }

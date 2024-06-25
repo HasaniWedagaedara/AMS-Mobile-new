@@ -36,7 +36,7 @@ void _showMenu(BuildContext context) async {
       items: [
         PopupMenuItem(
           value: 'Logout',
-          child:  AppLargeText3(text: "Log out"), // You can customize the appearance here
+          child:  ButtonText(text: "Log out"), // You can customize the appearance here
         ),
         
       ],

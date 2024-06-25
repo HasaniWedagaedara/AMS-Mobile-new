@@ -1,3 +1,4 @@
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -5,8 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:math';
 import 'studentverify.dart';
 import 'package:appointmentms/widgets/app_largetext.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
 import 'package:appointmentms/widgets/buttons.dart';
 
 class StudentSignup1 extends StatefulWidget {
@@ -183,7 +182,7 @@ class _StudentSignup1State extends State<StudentSignup1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarcommon(),
+      //appBar: AppBarcommon(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -215,7 +214,7 @@ class _StudentSignup1State extends State<StudentSignup1> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }

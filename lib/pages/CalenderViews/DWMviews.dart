@@ -1,6 +1,5 @@
-import 'package:appointmentms/widgets/appBar.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/pages/CalenderViews/TopCalenderWave.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
@@ -15,7 +14,7 @@ class _ViewsState extends State<Views> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  CustomAppBar(),
+      appBar:  ToppCalenderWave(),
       body: Column(
         children: [
           Row(
@@ -32,7 +31,7 @@ class _ViewsState extends State<Views> {
         ],
       ),
     
-  bottomNavigationBar: const BottomNavigation2(),
+  bottomNavigationBar: const BottomWaveBar(),
   );
   }
 }

@@ -1,5 +1,4 @@
-import 'package:appointmentms/widgets/appbarcommon.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:flutter/material.dart';
 import 'package:appointmentms/widgets/app_largetext.dart';
 
@@ -14,7 +13,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBarcommon(),
+      //appBar:  AppBarcommon(),
       body: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.only(top: 35),
@@ -27,7 +26,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }

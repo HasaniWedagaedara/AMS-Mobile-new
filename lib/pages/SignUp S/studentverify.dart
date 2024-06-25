@@ -1,8 +1,7 @@
 
 import 'package:appointmentms/pages/SignUp%20S/studentSignUp.dart';
 import 'package:appointmentms/widgets/app_largetext.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:appointmentms/widgets/buttons.dart';
 import 'package:appointmentms/widgets/texboxLec.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class _LecturerSignUpState3 extends State<StudentSignUp3> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar:  AppBarcommon(),
+      //appBar:  AppBarcommon(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -71,7 +70,7 @@ class _LecturerSignUpState3 extends State<StudentSignUp3> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }

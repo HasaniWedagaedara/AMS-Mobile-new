@@ -1,8 +1,7 @@
 import 'package:appointmentms/pages/SignUp%20L/lectureSignUp.dart';
 import 'package:appointmentms/pages/SignUp%20L/lectureSignUp3.dart';
 import 'package:appointmentms/widgets/app_largetext.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
-import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
+import 'package:appointmentms/widgets/bottomwave.dart';
 import 'package:appointmentms/widgets/buttons.dart';
 import 'package:appointmentms/widgets/texboxLec.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class _LecturerSignUpState2 extends State<LecturerSignUp2> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar:  AppBarcommon(),
+      //appBar:  AppBarcommon(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -60,7 +59,7 @@ class _LecturerSignUpState2 extends State<LecturerSignUp2> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar: const BottomWaveBar(),
     );
   }
 }
